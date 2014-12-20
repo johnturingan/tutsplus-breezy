@@ -1,6 +1,6 @@
 angular.module('breezy')
 
-.controller('TodosController', function($scope) {
+.controller('TodosController', function($scope, $timeout, TodosService) {
 
 	console.log('TodosController loaded!');
 
@@ -8,24 +8,7 @@ angular.module('breezy')
 		showDelete: false
 	};
 
-	$scope.todos = [
-		{
-			id: '1',
-			name: 'Item 1'
-		},
-		{
-			id: '2',
-			name: 'Item 2'
-		},
-		{
-			id: '3',
-			name: 'Item 3'
-		},
-		{
-			id: '4',
-			name: 'Item 4'
-		}
-	];
+	$scope.todos = TodosService.getTodos();
 
 	$scope.completeTodo = function(item) {
 		console.log(item);
