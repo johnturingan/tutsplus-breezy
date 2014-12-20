@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic'])
+angular.module('breezy', ['ionic'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -11,4 +11,23 @@ angular.module('starter', ['ionic'])
             StatusBar.styleDefault();
         }
     });
+})
+
+.config(function($stateProvider, $urlRouterProvider) {
+    $stateProvider
+        .state('app', {
+            url: '/app',
+            abstract: true,
+            templateUrl: 'app/app.html'
+        })
+        .state('app.todos', {
+        	url: '/todos',
+        	views: {
+                'appview': {
+                    templateUrl: 'app/todos/todos.html',
+                    controller: 'TodosController'
+                }
+            }
+        })
+    $urlRouterProvider.otherwise('/app/todos');
 })

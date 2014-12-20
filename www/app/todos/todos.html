@@ -1,0 +1,12 @@
+<ion-view title="Breezy">
+    <ion-content>
+        <ion-list show-delete="actionState.showDelete">
+			<ion-item ng-repeat="todo in todos">
+				<h2>{{ todo.name }}</h2>
+				<ion-option-button class="button-balanced icon ion-checkmark" ng-click="completeTodo(todo)"></ion-option-button>
+				<ion-option-button class="button-positive icon ion-share" ng-click="shareTodo(todo)"></ion-option-button>
+				<ion-option-button class="button-assertive icon ion-trash-a" ng-click="deleteTodo($index)"></ion-option-button>
+			</ion-item>
+		</ion-list>
+    </ion-content>
+</ion-view>
