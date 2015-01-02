@@ -13,7 +13,7 @@ angular.module('breezy')
 			var deferred = $q.defer(),
 				that = this;
 			$http({
-				url: 'http://kunalnagar.in/tutsplus/tutsplus-breezy/todos-data.php',
+				url: 'https://tutsplus-breezy.firebaseio.com/items.json',
 				method: 'GET',
 				responseType: 'json'
 			})	
