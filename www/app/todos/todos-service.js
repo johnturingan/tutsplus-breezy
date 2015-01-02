@@ -1,33 +1,30 @@
 angular.module('breezy')
 
-.service('TodosService', function() {
-
+.service('TodosService', function($http, $q) {
+	
 	return {
-
-		_todosData: [
-			{
-				id: '1',
-				name: 'Item 1'
-			},
-			{
-				id: '2',
-				name: 'Item 2'
-			},
-			{
-				id: '3',
-				name: 'Item 3'
-			},
-			{
-				id: '4',
-				name: 'Item 4'
-			}
-		],
+		_todosData: [],
+		
 		getTodosData: function() {
 			return this._todosData;
 		},
+		
 		getTodos: function() {
-			return this.getTodosData();
+			var deferred = $q.defer(),
+				that = this;
+			$http({
+				url: 'http://kunalnagar.in/tutsplus/tutsplus-breezy/todos-data.php',
+				method: 'GET',
+				responseType: 'json'
+			})	
+			.success(function(data) {
+				deferred.resolve(data);
+				that._todosData = data;
+			})
+			.error(function(err) {
+				deferred.reject(err);
+			})
+			return deferred.promise;
 		}
 	}
-
 })

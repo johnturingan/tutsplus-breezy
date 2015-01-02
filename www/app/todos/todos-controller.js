@@ -8,8 +8,12 @@ angular.module('breezy')
 		showDelete: false
 	};
 
-	$scope.todos = TodosService.getTodos();
-
+	// dynamically get data from the service
+	// and assign to $scope.todos
+	TodosService.getTodos().then(function(todos) {
+		$scope.todos = todos;
+	})
+	
 	$scope.completeTodo = function(item) {
 		console.log(item);
 	}
