@@ -1,5 +1,7 @@
 # tutsplus-breezy
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kunalnagar/tutsplus-breezy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Welcome to the Github repo for the Tuts+ course: [Building Mobile Applications with Ionic](http://code.tutsplus.com/tutorials/building-mobile-applications-with-ionic-introduction-to-ionic--cms-22910)
 
 ## What is Breezy?
